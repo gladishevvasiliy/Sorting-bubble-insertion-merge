@@ -17,18 +17,13 @@ void displayArray(int *a);
 void displayLargeArray(int *b);
 
 int _tmain(int argc, _TCHAR* argv[]) {
-	// A array
-	/*int n;
-	cout << "ENTER SIZE" << endl;
-	cin >> n;
-	int* a=new int[n];*/
+	
 
 	int a[n];
 	cout << "ENTER ELEMENTS" << endl;
 	for (int i = 0; i < n; i++) cin >> a[i];
 
 	cout << "YOU A MASSIV" << endl;
-	//for (int i = 0; i < n; i++) cout << a[i] << " ";
 	displayArray(a);
 	cout << endl;
 
@@ -43,18 +38,8 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	}
 
 	cout << "YOU FINISHED A MASSIV" << endl;
-	//for (int i = 0; i < n; i++) cout << a[i] << " ";
-	//cout << endl;
-	//cout << endl;
 	displayArray(a);
 	cout << endl;
-
-	// B array
-
-	/*int m, key, j;
-	cout << "ENTER SIZE" << endl;
-	cin >> m;
-	int* b = new int[m];*/
 
 	
 	int b[m];
@@ -64,8 +49,6 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	for (int i = 0; i < m; i++) cin >> b[i];
 
 	cout << "YOU B MASSIV" << endl;
-	//for (int i = 0; i < m; i++) cout << b[i] << " ";
-	//cout << endl;
 	displayArray(b);
 	cout << endl;
 
@@ -80,18 +63,11 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	}
 
 	cout << "YOU FINISHED B MASSIV" << endl;
-	//for (int i = 0; i < m; i++) cout << b[i] << " ";
-	//cout << endl;
-	//cout << endl;
 	displayArray(b);
 	cout << endl;
 
 	//C ARRAY
 	int c[n + m];
-	//int *c = new int[n + m];
-
-
-
 	int i = 0;
 	int g = 0;
 	int l = 0;
@@ -118,8 +94,6 @@ int _tmain(int argc, _TCHAR* argv[]) {
 		g++;
 	}
 	cout << "YOU FINISHED C MASSIV" << endl;
-	//for (int i = 0; i < m + n; i++) cout << c[i] << " ";
-	//cout << endl;
 	displayLargeArray(c);
 	cout << endl;
 
