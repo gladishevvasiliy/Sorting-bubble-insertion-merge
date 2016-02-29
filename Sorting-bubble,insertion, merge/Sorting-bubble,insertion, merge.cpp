@@ -11,7 +11,10 @@
 
 using namespace std;
 
-
+int const n = 5;
+int const m = 5;
+void displayArray(int *a);
+void displayLargeArray(int *b);
 
 int _tmain(int argc, _TCHAR* argv[]) {
 	// A array
@@ -19,13 +22,14 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	cout << "ENTER SIZE" << endl;
 	cin >> n;
 	int* a=new int[n];*/
-	int const n = 5;
+
 	int a[n];
 	cout << "ENTER ELEMENTS" << endl;
 	for (int i = 0; i < n; i++) cin >> a[i];
 
 	cout << "YOU A MASSIV" << endl;
-	for (int i = 0; i < n; i++) cout << a[i] << " ";
+	//for (int i = 0; i < n; i++) cout << a[i] << " ";
+	displayArray(a);
 	cout << endl;
 
 	for (int i = 0; i < n - 1; i++) {
@@ -39,8 +43,10 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	}
 
 	cout << "YOU FINISHED A MASSIV" << endl;
-	for (int i = 0; i < n; i++) cout << a[i] << " ";
-	cout << endl;
+	//for (int i = 0; i < n; i++) cout << a[i] << " ";
+	//cout << endl;
+	//cout << endl;
+	displayArray(a);
 	cout << endl;
 
 	// B array
@@ -50,7 +56,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	cin >> m;
 	int* b = new int[m];*/
 
-	int const m = 5;
+	
 	int b[m];
 	int key, j;
 
@@ -58,7 +64,9 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	for (int i = 0; i < m; i++) cin >> b[i];
 
 	cout << "YOU B MASSIV" << endl;
-	for (int i = 0; i < m; i++) cout << b[i] << " ";
+	//for (int i = 0; i < m; i++) cout << b[i] << " ";
+	//cout << endl;
+	displayArray(b);
 	cout << endl;
 
 	for (int i = 1; i < m; i++) {
@@ -72,8 +80,10 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	}
 
 	cout << "YOU FINISHED B MASSIV" << endl;
-	for (int i = 0; i < m; i++) cout << b[i] << " ";
-	cout << endl;
+	//for (int i = 0; i < m; i++) cout << b[i] << " ";
+	//cout << endl;
+	//cout << endl;
+	displayArray(b);
 	cout << endl;
 
 	//C ARRAY
@@ -108,7 +118,9 @@ int _tmain(int argc, _TCHAR* argv[]) {
 		g++;
 	}
 	cout << "YOU FINISHED C MASSIV" << endl;
-	for (int i = 0; i < m + n; i++) cout << c[i] << " ";
+	//for (int i = 0; i < m + n; i++) cout << c[i] << " ";
+	//cout << endl;
+	displayLargeArray(c);
 	cout << endl;
 
 	system("pause");
@@ -116,3 +128,9 @@ int _tmain(int argc, _TCHAR* argv[]) {
 }
 
 
+void displayArray(int *a) {
+	for (int i = 0; i < n; i++) cout << a[i]<< " ";
+}
+void displayLargeArray(int *c) {
+	for (int i = 0; i < m + n; i++) cout << c[i] << " ";
+}
