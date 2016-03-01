@@ -15,6 +15,7 @@ void displayArray(int a[], int n);
 void bubbleSort(int a[], int n);
 void inputArray(int a[], int n);
 int compare(int a, int b);
+void swap(int *a, int *b);
 
 int _tmain(int argc, _TCHAR* argv[]) {
 
@@ -29,15 +30,16 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	displayArray(a, n);
 	cout << endl;
 
-	for (int i = 0; i < n - 1; i++) {
-		for (int j = 0; j < n - i - 1; j++) {
-			if (a[j] > a[j + 1]) {
-				int b = a[j]; //change for elements
-				a[j] = a[j + 1];
-				a[j + 1] = b;
-			}
-		}
-	}
+	bubbleSort(a, n);
+	//for (int i = 0; i < n - 1; i++) {
+	//	for (int j = 0; j < n - i - 1; j++) {
+	//		if (a[j] > a[j + 1]) {
+	//			int b = a[j]; //change for elements
+	//			a[j] = a[j + 1];
+	//			a[j + 1] = b;
+	//		}
+	//	}
+	//}
 
 	cout << "YOU FINISHED A MASSIV" << endl;
 	displayArray(a, n);
@@ -111,16 +113,17 @@ void inputArray(int a[],int n) {
 	for (int i = 0; i < n; i++) scanf_s("%i", &a[i]);
 }
 void bubbleSort(int a[], int n) {
-	for (int i = 0; i < n - 1; i++) {
-		for (int j = 0; j < n - i - 1; j++) {
-			if (compare(a[j], a[j+1])) {
-				int b = a[j]; //change for elements
-				a[j] = a[j + 1];
-				a[j + 1] = b;
-			}
-		}
-	}
+	for (int i = 0; i < n - 1; i++)
+		for (int j = 0; j < n - i - 1; j++)
+			if (compare(a[j], a[j + 1]))
+				swap(&a[j], &a[j + 1]);
 }
+			
 int compare(int a, int b) {
 	return a > b;
+}
+void swap(int *a, int *b) {
+	int c = *a; 
+	*a = *b;
+	*b = c;
 }
