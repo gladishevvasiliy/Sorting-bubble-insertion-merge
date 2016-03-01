@@ -11,20 +11,21 @@
 
 using namespace std;
 
-int const n = 5;
-int const m = 5;
-void displayArray(int *a);
-void displayLargeArray(int *b);
+void displayArray(int a[], int n);
+void inputArray(int a[], int n);
 
 int _tmain(int argc, _TCHAR* argv[]) {
-	
+
+	int const n = 5;
+	int const m = 5;
 
 	int a[n];
 	cout << "ENTER ELEMENTS" << endl;
-	for (int i = 0; i < n; i++) cin >> a[i];
+	//for (int i = 0; i < n; i++) cin >> a[i];
+	inputArray(a, n);
 
 	cout << "YOU A MASSIV" << endl;
-	displayArray(a);
+	displayArray(a, n);
 	cout << endl;
 
 	for (int i = 0; i < n - 1; i++) {
@@ -38,7 +39,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	}
 
 	cout << "YOU FINISHED A MASSIV" << endl;
-	displayArray(a);
+	displayArray(a, n);
 	cout << endl;
 
 	
@@ -46,10 +47,11 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	int key, j;
 
 	cout << "ENTER ELEMENTS" << endl;
-	for (int i = 0; i < m; i++) cin >> b[i];
+	//for (int i = 0; i < m; i++) cin >> b[i];
+	inputArray(b, m);
 
 	cout << "YOU B MASSIV" << endl;
-	displayArray(b);
+	displayArray(b, m);
 	cout << endl;
 
 	for (int i = 1; i < m; i++) {
@@ -63,7 +65,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	}
 
 	cout << "YOU FINISHED B MASSIV" << endl;
-	displayArray(b);
+	displayArray(b, m);
 	cout << endl;
 
 	//C ARRAY
@@ -94,7 +96,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 		g++;
 	}
 	cout << "YOU FINISHED C MASSIV" << endl;
-	displayLargeArray(c);
+	displayArray(c, n+m);
 	cout << endl;
 
 	system("pause");
@@ -102,9 +104,10 @@ int _tmain(int argc, _TCHAR* argv[]) {
 }
 
 
-void displayArray(int *a) {
+void displayArray(int a[], int n) {
 	for (int i = 0; i < n; i++) cout << a[i]<< " ";
 }
-void displayLargeArray(int *c) {
-	for (int i = 0; i < m + n; i++) cout << c[i] << " ";
+
+void inputArray(int a[],int n) {
+	for (int i = 0; i < n; i++) /*cin << a[i] << " "*/ scanf_s("%i", &a[i]);
 }
