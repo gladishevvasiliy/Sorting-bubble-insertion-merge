@@ -12,7 +12,9 @@
 using namespace std;
 
 void displayArray(int a[], int n);
+void bubbleSort(int a[], int n);
 void inputArray(int a[], int n);
+void compare(int a[j], int a[j + 1]);
 
 int _tmain(int argc, _TCHAR* argv[]) {
 
@@ -40,7 +42,8 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	cout << "YOU FINISHED A MASSIV" << endl;
 	displayArray(a, n);
 	cout << endl;
-	
+	 
+	///////////////////////////////////////// B array ////////////////////////////////////////
 	int b[m];
 	int key, j;
 	cout << "ENTER ELEMENTS" << endl;
@@ -64,7 +67,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	displayArray(b, m);
 	cout << endl;
 
-	//C ARRAY
+////////////////////////////////////////////////////////// C array //////////////////////////////////////////
 	int c[n + m];
 	int i = 0;
 	int g = 0;
@@ -106,4 +109,18 @@ void displayArray(int a[], int n) {
 
 void inputArray(int a[],int n) {
 	for (int i = 0; i < n; i++) scanf_s("%i", &a[i]);
+}
+void bubbleSort(int a[], int n) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (a[j] > a[j + 1]) {
+				int b = a[j]; //change for elements
+				a[j] = a[j + 1];
+				a[j + 1] = b;
+			}
+		}
+	}
+}
+void compare(a[j], a[j + 1]) {
+
 }
