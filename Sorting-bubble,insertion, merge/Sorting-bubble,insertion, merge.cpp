@@ -21,7 +21,6 @@ int _tmain(int argc, _TCHAR* argv[]) {
 
 	int a[n];
 	cout << "ENTER ELEMENTS" << endl;
-	//for (int i = 0; i < n; i++) cin >> a[i];
 	inputArray(a, n);
 
 	cout << "YOU A MASSIV" << endl;
@@ -41,13 +40,10 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	cout << "YOU FINISHED A MASSIV" << endl;
 	displayArray(a, n);
 	cout << endl;
-
 	
 	int b[m];
 	int key, j;
-
 	cout << "ENTER ELEMENTS" << endl;
-	//for (int i = 0; i < m; i++) cin >> b[i];
 	inputArray(b, m);
 
 	cout << "YOU B MASSIV" << endl;
@@ -109,5 +105,5 @@ void displayArray(int a[], int n) {
 }
 
 void inputArray(int a[],int n) {
-	for (int i = 0; i < n; i++) /*cin << a[i] << " "*/ scanf_s("%i", &a[i]);
+	for (int i = 0; i < n; i++) scanf_s("%i", &a[i]);
 }
