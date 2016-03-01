@@ -16,13 +16,12 @@ void bubbleSort(int a[], int n);
 void inputArray(int a[], int n);
 int compare(int a, int b);
 void swap(int *a, int *b);
-
+void insertSort(int b[], int m);
 int _tmain(int argc, _TCHAR* argv[]) {
 
-	int const n = 5;
-	int const m = 5;
-
+	int const n = 5;	
 	int a[n];
+
 	cout << "ENTER ELEMENTS" << endl;
 	inputArray(a, n);
 
@@ -46,24 +45,25 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	cout << endl;
 	 
 	///////////////////////////////////////// B array ////////////////////////////////////////
+	int const m = 5;
 	int b[m];
-	int key, j;
+	
 	cout << "ENTER ELEMENTS" << endl;
 	inputArray(b, m);
 
 	cout << "YOU B MASSIV" << endl;
 	displayArray(b, m);
 	cout << endl;
-
-	for (int i = 1; i < m; i++) {
-		key = b[i];
-		j = i - 1;
-		while (j >= 0 && b[j] > key) {
-			b[j + 1] = b[j];
-			j = j - 1;
-		}
-		b[j + 1] = key;
-	}
+	insertSort(b, m);
+	//for (int i = 1; i < m; i++) {
+	//	key = b[i];
+	//	j = i - 1;
+	//	while (j >= 0 && b[j] > key) {
+	//		b[j + 1] = b[j];
+	//		j = j - 1;
+	//	}
+	//	b[j + 1] = key;
+	//}
 
 	cout << "YOU FINISHED B MASSIV" << endl;
 	displayArray(b, m);
@@ -126,4 +126,17 @@ void swap(int *a, int *b) {
 	int c = *a; 
 	*a = *b;
 	*b = c;
+}
+
+void insertSort(int b[], int m) {
+	int key, j;
+	for (int i = 1; i < m; i++) {
+		key = b[i];
+		j = i - 1;
+		while (j >= 0 && /*b[j] > key */ compare(b[j], key)) {
+			b[j + 1] = b[j];
+			j = j - 1;
+		}
+		b[j + 1] = key;
+	}
 }
