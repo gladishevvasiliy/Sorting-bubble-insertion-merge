@@ -14,7 +14,7 @@ using namespace std;
 void displayArray(int a[], int n);
 void bubbleSort(int a[], int n);
 void inputArray(int a[], int n);
-void compare(int a[j], int a[j + 1]);
+int compare(int a, int b);
 
 int _tmain(int argc, _TCHAR* argv[]) {
 
@@ -113,7 +113,7 @@ void inputArray(int a[],int n) {
 void bubbleSort(int a[], int n) {
 	for (int i = 0; i < n - 1; i++) {
 		for (int j = 0; j < n - i - 1; j++) {
-			if (a[j] > a[j + 1]) {
+			if (compare(a[j], a[j+1])) {
 				int b = a[j]; //change for elements
 				a[j] = a[j + 1];
 				a[j + 1] = b;
@@ -121,6 +121,6 @@ void bubbleSort(int a[], int n) {
 		}
 	}
 }
-void compare(a[j], a[j + 1]) {
-
+int compare(int a, int b) {
+	return a > b;
 }
